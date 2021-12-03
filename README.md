@@ -118,8 +118,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What are the main differences between a stateful and a functional component?
 
+ANSWER: A stateful component is able to maintain its own internal state.  This is useful as this state can be stored privately or locally, thus minimizing potential conflicts with team members' code.
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+
+ANSWER: componentWillMount is called exactly once, when a React class based component is initially rendered. componentWillUpdate is called every time any slice of state is modified for a class based component, including the component's initial rendering.
 
 3. Define stateful logic.
 
+ANSWER: Stateful logic is code that alters the component's state.  It is common for custom hooks to contain stateful logic, in order to improve a component's code readability and to promote reusability of code.
+
 4. What are the three step of creating a successful test? What is done in each phase? 
+
+ANSWER: The three steps are AAA, or Arrange, Act, Assert. 
+          1. Arrange - establish local DOM upon which your tests will be conducted (eg. Render the App). Also, parse through the local DOM to establish which elements will be utilized in testing, and save as variable(s) (eg. const submitButton = screen.queryByRole('button');).
+          2. Act - Perform actions resulting in *events* in the local DOM (eg. userEvent.click(submitButton);).
+          3. Assert - This is where expectations and *passing* criteria are declared. If criteria is met, test passes; if not met, tests fails.
